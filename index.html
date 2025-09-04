@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBL Multi Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">Multi Builder</h1>
+                <button class="back-btn">Back to Options</button>
+            </div>
+        </header>
+
+        <div class="league-selector">
+            <div class="league-option active">
+                <div class="league-logo bbl-logo">
+                    <span>BBL</span>
+                </div>
+            </div>
+            <div class="league-option disabled">
+                <div class="league-logo">
+                    <span>AFL</span>
+                </div>
+            </div>
+            <div class="league-option disabled">
+                <div class="league-logo">
+                    <span>NRL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="match-selection">
+            <label class="section-label">Select Match</label>
+            <select id="matchSelect" class="dropdown">
+                <option value="">Loading matches...</option>
+            </select>
+        </div>
+
+        <div class="winner-prediction">
+            <label class="section-label">Predict Winner</label>
+            <div class="winner-buttons">
+                <button id="homeTeamBtn" class="winner-btn">
+                    <span class="trophy-icon">🏆</span>
+                    <span class="team-name">Select Match First</span>
+                </button>
+                <button id="awayTeamBtn" class="winner-btn">
+                    <span class="trophy-icon">🏆</span>
+                    <span class="team-name">Select Match First</span>
+                </button>
+            </div>
+        </div>
+
+        <button id="buildMultiBtn" class="build-multi-btn" disabled>
+            Build Multi
+        </button>
+
+        <div id="recommendationsSection" class="recommendations-section" style="display: none;">
+            <div class="recommendations-header">
+                <div class="info-icon">ℹ️</div>
+                <h3>Our Recommendations (Data 2019 Onwards)</h3>
+            </div>
+            <p class="recommendations-subtitle">
+                These are the top percentage markets for players in this match:
+            </p>
+            <div id="recommendationsList" class="recommendations-list">
+                <!-- Recommendations will be populated here -->
+            </div>
+        </div>
+
+        <div id="selectedBets" class="selected-bets" style="display: none;">
+            <h3>Your Multi Bet</h3>
+            <div id="selectedBetsList" class="selected-bets-list">
+                <!-- Selected bets will be shown here -->
+            </div>
+            <button id="viewBetSlipBtn" class="view-bet-slip-btn">
+                View Bet Slip (<span id="legCount">0</span> Legs)
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
