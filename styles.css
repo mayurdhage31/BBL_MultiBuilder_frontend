@@ -13,10 +13,26 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
     min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.left-column {
+    flex: 1;
+    max-width: 650px;
+}
+
+.right-column {
+    flex: 1;
+    max-width: 650px;
 }
 
 .header {
@@ -113,6 +129,10 @@ body {
     margin-bottom: 12px;
 }
 
+.matchup-selection {
+    margin-bottom: 30px;
+}
+
 .match-selection {
     margin-bottom: 30px;
 }
@@ -144,6 +164,60 @@ body {
     margin-bottom: 30px;
 }
 
+.lock-selections {
+    margin-bottom: 30px;
+}
+
+.lock-selection {
+    margin-bottom: 20px;
+}
+
+.lock-selections-display {
+    margin-bottom: 30px;
+}
+
+.lock-player-box {
+    background: rgba(45, 55, 72, 0.7);
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lock-player-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.lock-player-name {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.lock-market-name {
+    color: #cbd5e0;
+    font-size: 0.75rem;
+}
+
+.lock-percentage {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.lock-separator {
+    color: #718096;
+    font-size: 0.7rem;
+    margin: 0 4px;
+}
+
 .winner-buttons {
     display: flex;
     gap: 15px;
@@ -153,16 +227,16 @@ body {
     flex: 1;
     background: #2d3748;
     border: 2px solid #4a5568;
-    border-radius: 12px;
-    padding: 20px 15px;
+    border-radius: 6px;
+    padding: 10px 8px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .winner-btn:hover:not(:disabled) {
@@ -182,7 +256,7 @@ body {
 }
 
 .trophy-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: 0.7;
 }
 
@@ -199,14 +273,14 @@ body {
     width: 100%;
     background: #4ade80;
     border: none;
-    border-radius: 12px;
-    padding: 18px;
+    border-radius: 10px;
+    padding: 14px;
     color: #1a1a2e;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .build-multi-btn:hover:not(:disabled) {
@@ -427,4 +501,263 @@ body {
         align-items: flex-start;
         gap: 10px;
     }
+    
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .left-column,
+    .right-column {
+        max-width: 100%;
+    }
+    
+    /* Mobile: Additional Recommendations appears below selection panel */
+    #additionalRecommendationsSection {
+        order: 1;
+    }
+}
+
+/* Player Stats Styles */
+.player-stats-section {
+    background: #2d3748;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #4a5568;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.stats-title {
+    color: #4ade80;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.player-stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+.player-name {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.player-stats-line {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.stat-value {
+    color: #fbbf24;
+    font-weight: 500;
+}
+
+.percentage {
+    color: #34d399;
+    font-weight: 500;
+}
+
+/* Stats Category Sections */
+.stats-category-section {
+    background: rgba(26, 26, 46, 0.6);
+    border: 1px solid #4a5568;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.category-title {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 8px;
+}
+
+/* Market stat box - smaller individual boxes */
+.market-stat-box {
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 6px 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 32px;
+    margin-bottom: 5px;
+}
+
+.market-stat-box:hover {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
+}
+
+.market-stat-box.selected {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.market-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #4ade80;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.market-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.market-player-name {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.market-name {
+    color: #cbd5e0;
+    font-size: 0.7rem;
+}
+
+.market-percentage {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.market-separator {
+    color: #718096;
+    font-size: 0.7rem;
+    margin: 0 4px;
+}
+
+/* Legacy player stat item styles - keeping for compatibility */
+.player-stat-item {
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 70px;
+}
+
+.player-stat-item:hover {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
+}
+
+.player-stat-item.selected {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.player-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #4ade80;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.player-info {
+    flex: 1;
+}
+
+/* Selectable Recommendations Section */
+.selectable-recommendations-section {
+    background: #2d3748;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #4a5568;
+}
+
+.selections-title {
+    color: #4ade80;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.selectable-recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selectable-recommendation-item {
+    background: rgba(26, 26, 46, 0.8);
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.selectable-recommendation-item:hover {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
+}
+
+.selection-player-info {
+    flex: 1;
+}
+
+.selection-player-name {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.selection-player-stat {
+    color: #cbd5e0;
+    font-size: 0.85rem;
+}
+
+.selection-remove-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 6px;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.selection-remove-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
 }

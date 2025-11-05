@@ -12,63 +12,63 @@
         <header class="header">
             <div class="header-content">
                 <h1 class="title">Multi Builder</h1>
-                <button class="back-btn">Back to Options</button>
             </div>
         </header>
 
-        <div class="league-selector">
-            <div class="league-option active">
-                <div class="league-logo bbl-logo">
-                    <span>BBL</span>
-                </div>
-            </div>
-            <div class="league-option disabled">
-                <div class="league-logo">
-                    <span>AFL</span>
-                </div>
-            </div>
-            <div class="league-option disabled">
-                <div class="league-logo">
-                    <span>NRL</span>
-                </div>
-            </div>
-        </div>
+        <div class="main-content">
+            <div class="left-column">
 
-        <div class="match-selection">
-            <label class="section-label">Select Match</label>
-            <select id="matchSelect" class="dropdown">
-                <option value="">Loading matches...</option>
+
+        <div class="matchup-selection">
+            <label class="section-label">Select Matchup</label>
+            <select id="matchupSelect" class="dropdown">
+                <option value="">Loading matchups...</option>
             </select>
         </div>
 
-        <div class="winner-prediction">
+        <div class="winner-prediction" id="winnerPredictionSection" style="display: none;">
             <label class="section-label">Predict Winner</label>
             <div class="winner-buttons">
-                <button id="homeTeamBtn" class="winner-btn">
+                <button id="team1Btn" class="winner-btn">
                     <span class="trophy-icon">🏆</span>
-                    <span class="team-name">Select Match First</span>
+                    <span class="team-name">Select Matchup First</span>
                 </button>
-                <button id="awayTeamBtn" class="winner-btn">
+                <button id="team2Btn" class="winner-btn">
                     <span class="trophy-icon">🏆</span>
-                    <span class="team-name">Select Match First</span>
+                    <span class="team-name">Select Matchup First</span>
                 </button>
             </div>
         </div>
 
+        <div class="lock-selections" id="lockSelectionsSection" style="display: none;">
+            <div class="lock-selection">
+                <label class="section-label">Who is your lock to hit a six?</label>
+                <select id="sixLockSelect" class="dropdown">
+                    <option value="">Select a player...</option>
+                </select>
+            </div>
+            
+            <div class="lock-selection">
+                <label class="section-label">Who is your lock to take a wicket?</label>
+                <select id="wicketLockSelect" class="dropdown">
+                    <option value="">Select a player...</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="lockSelectionsDisplay" class="lock-selections-display" style="display: none;">
+            <!-- Selected lock players will be displayed here -->
+        </div>
+
+
         <button id="buildMultiBtn" class="build-multi-btn" disabled>
-            Build Multi
+            Generate
         </button>
 
-        <div id="recommendationsSection" class="recommendations-section" style="display: none;">
-            <div class="recommendations-header">
-                <div class="info-icon">ℹ️</div>
-                <h3>Our Recommendations (Data 2019 Onwards)</h3>
-            </div>
-            <p class="recommendations-subtitle">
-                These are the top percentage markets for players in this match:
-            </p>
-            <div id="recommendationsList" class="recommendations-list">
-                <!-- Recommendations will be populated here -->
+        <div id="additionalRecommendationsSection" class="stats-category-section" style="display: none;">
+            <h4 class="category-title">Additional Recommendations</h4>
+            <div id="additionalRecommendationsList" class="player-stats-list">
+                <!-- Additional recommendations will be populated here -->
             </div>
         </div>
 
@@ -80,6 +80,35 @@
             <button id="viewBetSlipBtn" class="view-bet-slip-btn">
                 View Bet Slip (<span id="legCount">0</span> Legs)
             </button>
+        </div>
+            </div>
+
+            <div class="right-column">
+                <div id="playerStatsSection" class="player-stats-section" style="display: none;">
+                    <h3 class="stats-title">Player Stats</h3>
+                    
+                    <div id="battingStatsSection" class="stats-category-section">
+                        <h4 class="category-title">Batting Stats</h4>
+                        <div id="battingStatsList" class="player-stats-list">
+                            <!-- Batting stats will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div id="bowlingStatsSection" class="stats-category-section">
+                        <h4 class="category-title">Bowling Stats</h4>
+                        <div id="bowlingStatsList" class="player-stats-list">
+                            <!-- Bowling stats will be populated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="selectableRecommendationsSection" class="selectable-recommendations-section" style="display: none;">
+                    <h3 class="selections-title">Selectable Recommendation</h3>
+                    <div id="selectableRecommendationsList" class="selectable-recommendations-list">
+                        <!-- Selected players will be populated here -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
